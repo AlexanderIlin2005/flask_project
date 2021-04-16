@@ -9,11 +9,12 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 # просто коментарий
 
-
-app.route("/index")
-app.route("/")
+@app.route("/")
+@app.route("/index")
 def index():
-    return render_template("templates/index.html")
+    params = {}
+    params['title'] = 'Домашняя страница'
+    return render_template('index.html', **params)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -27,7 +28,7 @@ def login():
 
 def main():
     db_session.global_init("db/library.db")
-    app.run()
+    app.run(port=8080, host='127.0.0.1')
 
 
 if __name__ == '__main__':
