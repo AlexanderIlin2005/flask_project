@@ -89,7 +89,6 @@ def logout():
 
 
 @app.route('/login', methods=['GET', 'POST'])
-@login_required
 def login():
     form = LoginForm()
     if form.validate_on_submit():
