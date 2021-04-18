@@ -5,8 +5,10 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<p>Добро пожаловать в онлайн Дневник читателя.<br>
+<p><h1>Добро пожаловать в онлайн Дневник читателя.</h1><br>
 </p>
-
+{% if molodec == True %}
+<form action="/logout"><button>Выйти</button></form>
+{% endif %}
 </body>
 </html>

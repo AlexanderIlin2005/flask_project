@@ -26,11 +26,11 @@ def main():
 @app.route("/")
 @app.route("/index")
 def index():
-    if current_user.is_authenticated:
-        pass
-    else:
-        pass
     params = {}
+    if current_user.is_authenticated:
+        params['molodec'] = True
+    else:
+        params['molodec'] = False
     params['title'] = 'Дневник читателя'
     return render_template('index.html', **params)
 
