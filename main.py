@@ -3,7 +3,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 
 from forms.user import RegisterForm, LoginForm
 from data.users import User
-# from data.compositions import Composition
+from data.compositions import Composition
 from data import db_session
 
 app = Flask(__name__)
@@ -24,19 +24,26 @@ def main():
 @app.route("/")
 @app.route("/index")
 def index():
+    if current_user.is_authenticated:
+        pass
+    else:
+        pass
     params = {}
     params['title'] = 'Дневник читателя'
     return render_template('index.html', **params)
 
-"""
+
 @app.route('/compositions/<name>')
-@login_manager.user_loader
 def list_prof(name):
+    name1 = name.replace("_", " ")
     param = {}
-    param['title'] = name
+    param['Title'] = name1
+    param['name'] = name1
     db_sess = db_session.create_session()
+    for composition in db_sess.query(Composition).filter(Composition.Name == name1):
+        print(composition)
     return render_template('composition.html', **param)
-"""
+
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = db_session.create_session()
@@ -44,6 +51,7 @@ def load_user(user_id):
 
 
 @app.route('/login', methods=['GET', 'POST'])
+@login_required
 def login():
     form = LoginForm()
     if form.validate_on_submit():
