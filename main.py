@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, make_response
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user, login_manager
 
 from forms.user import RegisterForm, LoginForm
 from data.users import User
@@ -12,8 +12,11 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 def main():
     db_session.global_init("db/library.db")
+
+    login_manager.login_view = 'login'
     app.run(port=8080, host='127.0.0.1')
 # просто коментарий
 
@@ -34,9 +37,13 @@ def list_prof(name):
     db_sess = db_session.create_session()
     return render_template('composition.html', **param)
 """
+@login_manager.user_loader
+def load_user(user_id):
+    db_sess = db_session.create_session()
+    return db_sess.query(User).get(user_id)
+
 
 @app.route('/login', methods=['GET', 'POST'])
-@login_manager.user_loader
 def login():
     form = LoginForm()
     if form.validate_on_submit():
