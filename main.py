@@ -37,6 +37,7 @@ def index():
     params["compositions"] = compositions
     return render_template('index.html', **params)
 
+
 @app.route('/<name>')
 def about_composition(name):
     params = {}
@@ -46,8 +47,9 @@ def about_composition(name):
     return render_template("composition.html", **params)
 
 
-
-
+@app.route("/about")
+def about_app():
+    return render_template("about_app.html")
 
 
 @login_manager.user_loader
