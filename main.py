@@ -26,17 +26,28 @@ def main():
 @app.route("/")
 @app.route("/index")
 def index():
+    db_sess = db_session.create_session()
     params = {}
     if current_user.is_authenticated:
         params['molodec'] = True
     else:
         params['molodec'] = False
     params['title'] = 'Дневник читателя'
+    compositions = db_sess.query(Composition).all()
+    params["compositions"] = compositions
     return render_template('index.html', **params)
 
+@app.route('/<name>')
+def about_composition(name):
+    params = {}
+    params["name"] = name
+    params["Title"] = name
+    return render_template("composition.html", **params)
 
-@app.route('/compositions/<name>')
-def list_prof(name):
+
+
+@app.route('/compositions_api/<name>')
+def compositions_api(name):
     name1 = name.replace("_", " ")
     # param = {'Title': name1, 'name': name1}
     composition_dict = {
