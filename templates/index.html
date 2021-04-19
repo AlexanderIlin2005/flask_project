@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-    <style>
-</style>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 <p><h1>Добро пожаловать в онлайн Дневник читателя.</h1><br>
 </p>
 {% if molodec == True %}
-<form action="//127.0.0.1:8080/logout"><button style="height:100px;width:200px;font-size:50px"> Выйти</button></form>
+<form action="/logout"><button style="height:50px;width:150px;font-size:20px"> Выйти</button></form>
+{% else %}
+<table>
+    <tr>
+        <td>
+<form action="/login"><button style="height:50px;width:150px;font-size:20px"> Войти</button></form>
+        </td>
+    <td>
+<form action="/register"><button style="height:50px;width:150px;font-size:20px"> Регистрация</button></form>
+    </td>
+    </tr>
+</table>
 {% endif %}
-</body>
-</html>
+{% endblock %}
