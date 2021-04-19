@@ -6,7 +6,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from forms.user import RegisterForm, LoginForm
 from data.users import User
 from data.compositions import Composition
-from data import db_session
+from data import db_session, composition_api
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -17,7 +17,7 @@ login_manager.init_app(app)
 
 def main():
     db_session.global_init("db/library.db")
-
+    app.register_blueprint(composition_api.blueprint)
     login_manager.login_view = 'login'
     app.run(port=8080, host='127.0.0.1')
 # просто коментарий
@@ -47,44 +47,7 @@ def about_composition(name):
 
 
 
-@app.route('/compositions_api/<name>')
-def compositions_api(name):
-    name1 = name.replace("_", " ")
-    # param = {'Title': name1, 'name': name1}
-    composition_dict = {
-        "Name": "",
-        "Class": "",
-        "Literature_type": "",
-        "Year": "",
-        "Jenre": "",
-        "Author": "",
-        "Years_of_life": "",
-        "Painting": "",
-        "Movie": "",
-        "Music": "",
-        "Reading_time": "",
-        "Another_author_compositions": "",
-        "Illustrations": ""
 
-
-    }
-    db_sess = db_session.create_session()
-    for composition in db_sess.query(Composition).filter(Composition.Name == name1):
-        composition_dict["Name"] = composition.Name
-        composition_dict["Class"] = composition.Class
-        composition_dict["Literature_type"] = composition.Literature_type
-        composition_dict["Year"] = composition.Year
-        composition_dict["Jenre"] = composition.Jenre
-        composition_dict["Author"] = composition.Author
-        composition_dict["Years_of_life"] = composition.Years_of_life
-        composition_dict["Painting"] = composition.Painting
-        composition_dict["Movie"] = composition.Movie
-        composition_dict["Music"] = composition.Music
-        composition_dict["Reading_time"] = composition.Reading_time
-        composition_dict["Another_author_compositions"] = composition.Another_author_compositions
-        composition_dict["Illustrations"] = composition.Illustrations
-    # return render_template('composition.html', **param)
-    return f"{composition_dict}"
 
 
 @login_manager.user_loader
