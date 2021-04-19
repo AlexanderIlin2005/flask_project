@@ -40,8 +40,9 @@ def index():
 @app.route('/<name>')
 def about_composition(name):
     params = {}
-    params["name"] = name
-    params["Title"] = name
+    db_sess = db_session.create_session()
+    composition = db_sess.query(Composition).filter(Composition.Name == name).one()
+    params["composition"] = composition
     return render_template("composition.html", **params)
 
 

@@ -23,13 +23,15 @@
             <th>Автор</th>
             <th>Год издания</th>
             <th>Класс</th>
+            <th>Тип</th>
         </tr>
         {% for composition in compositions %}
         <tr>
             <td><a href="/{{composition.Name}}">{{ composition.Name }}</a></td>
-            <td>{{ composition.Author }}</td>
+            <td><a href="https://ru.wikipedia.org/wiki/{{composition.Author}}">{{ composition.Author }}</a></td>
             <td>{{ composition.Year }}</td>
             <td>{{ composition.Class }}</td>
+            <td>{{ composition.Literature_type }}</td>
         </tr>
         {% endfor %}
 </table>
