@@ -42,9 +42,13 @@ def index():
 def about_composition(name):
     params = {}
     db_sess = db_session.create_session()
-    composition = db_sess.query(Composition).filter(Composition.Name == name).one()
-    params["composition"] = composition
-    return render_template("composition.html", **params)
+    composition = db_sess.query(Composition).filter(Composition.Name == name).all()
+    try:
+        params["composition"] = composition[0]
+        return render_template("composition.html", **params)
+    except IndexError:
+        params["composition"] = composition
+        return render_template("composition.html", **params)
 
 
 @app.route("/about")
@@ -58,7 +62,7 @@ def load_user(user_id):
     return db_sess.query(User).get(user_id)
 
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
