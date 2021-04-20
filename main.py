@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, render_template, redirect, request, make_response, jsonify
+from flask import Flask, render_template, redirect, request, make_response, jsonify, send_file
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user, login_manager
 
 from forms.user import RegisterForm, LoginForm
@@ -20,6 +20,8 @@ def main():
     app.register_blueprint(composition_api.blueprint)
     login_manager.login_view = 'login'
     app.run(port=8080, host='127.0.0.1')
+
+
 # просто коментарий
 
 
@@ -54,6 +56,12 @@ def about_composition(name):
 @app.route("/about")
 def about_app():
     return render_template("about_app.html")
+
+
+@app.route('/download')
+def download_file():
+    path = "static/Форма для дневника читателя.docx"
+    return send_file(path, as_attachment=True)
 
 
 @login_manager.user_loader
