@@ -1,13 +1,15 @@
 import datetime
 import sqlalchemy
 from sqlalchemy import orm
+from sqlalchemy_serializer import SerializerMixin
 
 from .db_session import SqlAlchemyBase
 
-class Composition(SqlAlchemyBase):
+
+class Composition(SqlAlchemyBase, SerializerMixin):
     __tablename__ = 'compositions'
     Class = sqlalchemy.Column(sqlalchemy.Integer)
-    Name = sqlalchemy.Column(sqlalchemy.String)
+    Name = sqlalchemy.Column(sqlalchemy.String, primary_key=True)
     Literature_type = sqlalchemy.Column(sqlalchemy.String)
     Year = sqlalchemy.Column(sqlalchemy.String)
     Jenre = sqlalchemy.Column(sqlalchemy.String)
@@ -23,3 +25,6 @@ class Composition(SqlAlchemyBase):
 
     def print_name(self):
         return self.Name
+
+    def __repr__(self):
+        return f'<User>{self.Name}'
