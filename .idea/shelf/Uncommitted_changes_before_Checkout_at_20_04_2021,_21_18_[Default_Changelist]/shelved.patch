@@ -1,0 +1,19 @@
+Index: templates/base.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <link rel=\"stylesheet\"\n          href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"\n          integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\"\n          crossorigin=\"anonymous\">\n    <title>{{title}}</title>\n</head>\n<body>\n<header>\n    <nav class=\"navbar navbar-light bg-light\">\n        <a class=\"navbar-brand\" href=\"#\">Наше приложение</a>\n        <a href=\"/\" class=\"navbar-left\"><img src=\"/static/img/logo2.png\" width=\"100%\"></a>\n    </nav>\n    \n</header>\n<!-- Begin page content -->\n<main role=\"main\" class=\"container\">\n    {% block content %}{% endblock %}\n</main>\n</body>\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/base.html b/templates/base.html
+--- a/templates/base.html	
++++ b/templates/base.html	
+@@ -15,7 +15,7 @@
+         <a class="navbar-brand" href="#">Наше приложение</a>
+         <a href="/" class="navbar-left"><img src="/static/img/logo2.png" width="100%"></a>
+     </nav>
+-    
++
+ </header>
+ <!-- Begin page content -->
+ <main role="main" class="container">
