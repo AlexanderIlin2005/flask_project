@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,3 +11,53 @@
 
 </body>
 </html>
+=======
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<font size="12" color="black" face="Arial"><h1 align="center">ДНЕВНИК ЧИТАТЕЛЯ</h1></font>
+    <br>
+<center><a href="/about">О проекте "Дневник читателя"</a></center>
+<br>
+<br>
+{% if molodec == True %}
+<form action="/logout"><button style="height:50px;width:250px;font-size:20px"> Выйти</button></form>
+{% else %}
+<table>
+    <tr>
+        <td>
+<form action="/login"><button style="height:50px;width:250px;font-size:20px"> Войти</button></form>
+        </td>
+    <td>
+<form action="/register"><button style="height:50px;width:250px;font-size:20px"> Регистрация</button></form>
+    </td>
+    <td>
+<form action="/download"><button style="height:50px;width:550px;font-size:20px"> Загрузить форму дневника читателя</button></form>
+        </td>
+    <td>
+    </tr>
+</table>
+{% endif %}
+<br>
+<br>
+<table>
+        <tr>
+            <th>Название произведения</th>
+            <th>Автор</th>
+            <th>Год издания</th>
+            <th>Класс</th>
+            <th>Тип</th>
+        </tr>
+        {% for composition in compositions %}
+        <tr>
+            <td><a href="/{{composition.Name}}">{{ composition.Name }}</a></td>
+            <td><a href="https://ru.wikipedia.org/wiki/{{composition.Author}}">{{ composition.Author }}</a></td>
+            <td>{{ composition.Year }}</td>
+            <td>{{ composition.Class }}</td>
+            <td>{{ composition.Literature_type }}</td>
+        </tr>
+        {% endfor %}
+</table>
+{% endblock %}
+>>>>>>> Stashed changes

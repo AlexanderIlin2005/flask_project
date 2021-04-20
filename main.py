@@ -1,5 +1,12 @@
+<<<<<<< Updated upstream
 from flask import Flask, render_template, redirect, request, make_response
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+=======
+import json
+
+from flask import Flask, render_template, redirect, request, make_response, jsonify, send_file
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user, login_manager
+>>>>>>> Stashed changes
 
 from forms.user import RegisterForm, LoginForm
 from data.users import User
@@ -16,6 +23,12 @@ def main():
     db_session.global_init("db/library.db")
     app.run(port=8080, host='127.0.0.1')
 # просто коментарий
+
+
+@app.route('/download')
+def download_file():
+    path = "static/Форма для дневника читателя.docx"
+    return send_file(path, as_attachment=True)
 
 
 @app.route("/")
