@@ -1,27 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<br>
-<font size="12" color="black" face="Arial"><h1 align="center">ДНЕВНИК ЧИТАТЕЛЯ</h1></font>
-    <br>
+<center><p><h1>ДНЕВНИК ЧИТАТЕЛЯ</h1><br>
+</p></center>
 <center><a href="/about">О проекте "Дневник читателя"</a></center>
 <br>
 <br>
 {% if molodec == True %}
-<form action="/logout"><button style="height:50px;width:250px;font-size:20px"> Выйти</button></form>
+<table>
+    <tr>
+        <td>
+<form action="/logout"><button style="height:50px;width:150px;font-size:20px"> Выйти</button></form>
+        </td>
+    <td>
+<form action="/download"><button style="height:50px;width:500px;font-size:20px"> Загрузить форму для дневника читателя</button></form>
+    </td>
+    </tr>
+</table>
 {% else %}
 <table>
     <tr>
         <td>
-<form action="/login"><button style="height:50px;width:250px;font-size:20px"> Войти</button></form>
+<form action="/login"><button style="height:50px;width:150px;font-size:20px"> Войти</button></form>
         </td>
     <td>
-<form action="/register"><button style="height:50px;width:250px;font-size:20px"> Регистрация</button></form>
+<form action="/register"><button style="height:50px;width:150px;font-size:20px"> Регистрация</button></form>
     </td>
-    <td>
-<form action="/download"><button style="height:50px;width:550px;font-size:20px"> Загрузить форму дневника читателя</button></form>
-        </td>
-    <td>
     </tr>
 </table>
 {% endif %}

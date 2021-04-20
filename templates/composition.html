@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{Title}}</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+    <h1>{{composition.Name}}</h1>
+    <p>Это произведение написал {{composition.Author}}({{composition.Years_of_life}})</p>
+    <p>Жанр произведения - {{composition.Jenre}}</p>
+    <p>Полотна по произведению: {{composition.Painting}}</p>
+    <p>Фильмы по произведению: {{composition.Movie}}</p>
+    <p>Мызыкальные композиции: {{composition.Music}}</p>
+    <p>Среднее время прочтения: {{composition.Reading_time}}</p>
+    <p>Иллюстрации: {{composition.Illustrations}}</p>
+{% endblock %}
