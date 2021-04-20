@@ -1,12 +1,10 @@
-<<<<<<< Updated upstream
+
 from flask import Flask, render_template, redirect, request, make_response
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-=======
 import json
 
 from flask import Flask, render_template, redirect, request, make_response, jsonify, send_file
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user, login_manager
->>>>>>> Stashed changes
 
 from forms.user import RegisterForm, LoginForm
 from data.users import User
