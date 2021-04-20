@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p><h1>Добро пожаловать в онлайн Дневник читателя.</h1><br>
-</p>
-<a href="/about">Как пользоваться сайтом?</a>
+<center><p><h1>ДНЕВНИК ЧИТАТЕЛЯ</h1><br>
+</p></center>
+<center><a href="/about">О проекте "Дневник читателя"</a></center>
+<br>
+<br>
 {% if molodec == True %}
 <table>
     <tr>
@@ -27,6 +29,8 @@
     </tr>
 </table>
 {% endif %}
+<br>
+<br>
 <table>
         <tr>
             <th>Название произведения</th>
