@@ -27,7 +27,7 @@ def main():
 def download_file():
     path = "static/Форма для дневника читателя.docx"
     return send_file(path, as_attachment=True)
-
+# еще один
 
 @app.route("/")
 @app.route("/index")
