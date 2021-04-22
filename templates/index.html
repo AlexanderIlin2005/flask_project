@@ -12,9 +12,30 @@
         <td>
 <form action="/logout"><button style="height:50px;width:150px;font-size:20px"> Выйти</button></form>
         </td>
+
     <td>
 <form action="/download"><button style="height:50px;width:500px;font-size:20px"> Загрузить форму для дневника читателя</button></form>
     </td>
+
+    <td>
+<form action="/change_sort_by_author"><button style="height:50px;width:120px;font-size:20px"> По автору</button></form>
+    </td>
+
+    <td>
+<form action="/change_sort_by_class"><button style="height:50px;width:120px;font-size:20px"> По классу</button></form>
+    </td>
+
+    <td>
+<form action="/search" method="post">
+        <p>
+	    <input type="text" name="search_value">
+	</p>
+	<p>
+	    <input type="submit" value="Поиск">
+	</p>
+    </form>
+    </td>
+
     </tr>
 </table>
 {% else %}

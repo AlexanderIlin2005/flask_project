@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e3db055-8737-4aff-bc9d-21a7d9a7549b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_04_2021__21_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_04_2021__21_18__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flask_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/library.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/library.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="53b6525e1d58b7e6ce6ae1da88721662a7c5a384" />
+        <entry key="$PROJECT_DIR$" value="156ceb82bd1afbc83b30dd4ddb7e5d66d70b9347" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +60,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -93,46 +95,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1303" height="187" key="GridCell.Tab.0.bottom" timestamp="1618952879968">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="187" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618952879968" />
-    <state width="1303" height="187" key="GridCell.Tab.0.center" timestamp="1618952879967">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="187" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618952879967" />
-    <state width="1303" height="187" key="GridCell.Tab.0.left" timestamp="1618952879967">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="187" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618952879967" />
-    <state width="1303" height="187" key="GridCell.Tab.0.right" timestamp="1618952879968">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="187" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618952879968" />
-    <state width="1303" height="233" key="GridCell.Tab.1.bottom" timestamp="1618952412653">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618952412653" />
-    <state width="1303" height="233" key="GridCell.Tab.1.center" timestamp="1618952412653">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618952412653" />
-    <state width="1303" height="233" key="GridCell.Tab.1.left" timestamp="1618952412653">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618952412653" />
-    <state width="1303" height="233" key="GridCell.Tab.1.right" timestamp="1618952412653">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1303" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618952412653" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
