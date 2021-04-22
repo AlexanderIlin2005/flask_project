@@ -11,7 +11,7 @@ def get_all_compositions():
     composition = db_sess.query(Composition).all()
     l1 = []
     for item in composition:
-        l1.append(item.to_dict(only=('Name', 'Autor')))
+        l1.append(item.to_dict(only=('Name', 'Author')))
     return jsonify(
         {
             'compositions': l1
